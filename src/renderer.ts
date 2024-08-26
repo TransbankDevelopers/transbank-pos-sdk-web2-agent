@@ -27,5 +27,6 @@
  */
 
 import './index.css';
+import { version } from '../package.json';
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+document.title = `Agente POS v${version} - Transbank`
