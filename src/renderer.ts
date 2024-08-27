@@ -29,4 +29,28 @@
 import './index.css';
 import { version } from '../package.json';
 
-document.title = `Agente POS v${version} - Transbank`
+document.title = `Agente POS v${version} - Transbank`;
+
+window.electronAPI.onUpdateClientCount((count: number) => {
+    console.log('count updated', count);
+    document.getElementById('usersCount').innerText = count.toString();
+});
+
+window.electronAPI.onUpdateClientLog((data: string) => {
+    const logSection = document.getElementById('logs');
+    const newLogDetail = document.createElement('pre');
+    const formattedTime = getFormattedTime();
+    newLogDetail.classList.add('tbk-log-detail');
+    newLogDetail.textContent = `${formattedTime} | ${data}`;
+
+    console.log('Server log', data);
+    logSection.insertBefore(newLogDetail, logSection.firstChild);
+});
+
+function getFormattedTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    return `${hours}:${minutes}:${seconds}`;
+}
