@@ -1,7 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  margin: 0;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+pre {
+  margin: 0;
+}
+
+#root {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --tbk-white: #fcfdfe;
+  --tbk-red: #d5006c;
+  --tbk-red-dark: #cc0066;
+  --tbk-light-red: #d5006c0d;
+  --tbk-border: #e7ebf3;
+  --tbk-grey: #828ea5;
+  --tbk-grey-2: #707382;
+  --tbk-grey-3: #8c939f;
+  --tbk-grey-4: #f9fbfe;
+  --tbk-grey-5: #a9b1bf;
+  --tbk-grey-6: #e7ebf3;
+  --tbk-black: #0e1520;
+  --tbk-black-2: #2d3338;
+  --tbk-black-3: #333333;
+  --tbk-black-bg: #1f242e;
+  --tbk-border-blue: #c9d0e4;
+  --tbk-link: #009bdd;
+  --tbk-table-header: rgba(213, 0, 108, 0.05);
+  --tbk-danger-1: #ff8c82;
+  --tbk-danger-2: #ffeee5;
+  --tbk-danger-3: #ff4b4b;
+  --tbk-danger-4: #b7253f;
+  --tbk-success-1: #e8fcee;
+  --tbk-success-2: #0a9285;
+  --tbk-success-3: #7aefb6;
+  --tbk-success-4: #1abc9c;
+}
+.border-t-gray3 {
+  border-top: 1px solid var(--tbk-grey-3);
+}
+
+.border-r-gray5 {
+  border-right: 1px solid var(--tbk-grey-5);
+}
+
+.border-t-blue {
+  border-top: 0.5px solid var(--tbk-grey-5);
+}
 }
