@@ -44,6 +44,7 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
+    "socket.io": "^4.7.5",
     "transbank-pos-sdk": "file:../transbank-pos-sdk-nodejs"
   }
 }
