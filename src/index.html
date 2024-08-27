@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
+<html lang="es">
 
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Agente POS Web</title>
+</head>
+
+<body>
+  <div>
+    <header class="tbk-header">
+      <img src="assets/images/tbk-logo.svg" alt="Logo Transbank Developers" width="181">
+      <button class="tbk-header-button" id="btnToggleLogs">Mostrar últimos eventos</button>
+    </header>
+    <div class="tbk-header-status">
+      <p>Clientes conectados: <span id="usersCount">0</span></p>
+      <p>Escuchando en puerto: <span>8090</span></p>
+    </div>
+    <section>
+      <div class="tbk-logs">
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0100{0x03}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0810|00|597029414300|IT750147|{0x03}{0x15}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0100{0x03}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0810|00|597029414300|IT750147|{0x03}{0x15}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0100{0x03}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 💻 -->  {0x02}0810|00|597029414300|IT750147|{0x03}{0x15}
+        </pre>
+        <pre class="tbk-log-detail">
+          23:00:00 | 🤖 <--  {0x06}
+        </pre>
+      </div>
+    </section>
+  </div>
+</body>
 </html>
