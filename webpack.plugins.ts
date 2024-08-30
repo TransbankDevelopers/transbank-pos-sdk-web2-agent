@@ -11,7 +11,7 @@ export const plugins = [
   new CopyWebpackPlugin({
     patterns: [
         {
-            from: path.resolve(__dirname, 'node_modules/transbank-pos-sdk/node_modules/@serialport/bindings-cpp/prebuilds'),
+            from: path.resolve(__dirname, 'node_modules/@serialport/bindings-cpp/prebuilds'),
             to: path.resolve(__dirname, '.webpack/prebuilds'),
         },
         { from: 'src/assets', to: 'assets' }
