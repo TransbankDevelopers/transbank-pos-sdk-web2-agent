@@ -28,6 +28,7 @@
 
 import './index.css';
 import { version } from '../package.json';
+import { setupToggleLogs } from './renderer/toggle.logs'
 
 document.title = `Agente POS v${version} - Transbank`;
 
@@ -46,6 +47,8 @@ window.electronAPI.onUpdateClientLog((data: string) => {
     console.log('Server log', data);
     logSection.insertBefore(newLogDetail, logSection.firstChild);
 });
+
+setupToggleLogs();
 
 function getFormattedTime() {
     const now = new Date();

@@ -215,6 +215,7 @@ pre {
 }
 
 .tbk-logs {
+  display: none;
   background-color: var(--tbk-black-bg);
   color: var(--tbk-grey-4);
   font-family: 'Roboto', monospace;
