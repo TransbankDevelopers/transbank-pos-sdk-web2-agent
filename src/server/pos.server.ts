@@ -28,15 +28,24 @@ export default class PosServer {
       }
     }
 
+    function updatePosConnectionStatus(connected: boolean): void {
+      const windowsManager = WindowsManager.getMainWindow();
+      if (windowsManager) {
+        windowsManager.webContents.send("pos_status", connected);
+      }
+    }
+
     io.on("connection", (socket) => {
       updateClientCount(clientsCount + 1);
 
       pos.on("port_opened", (port) => {
         io.emit("event.port_opened", port);
+        updatePosConnectionStatus(true);
       });
 
       pos.on("port_closed", () => {
         io.emit("event.port_closed");
+        updatePosConnectionStatus(false);
       });
 
       socket.on("disconnect", () => {

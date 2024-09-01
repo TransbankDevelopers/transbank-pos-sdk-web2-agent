@@ -241,3 +241,22 @@ pre {
   color: var(--tbk-grey-4);
   font-style: italic;
 }
+
+.connection-status {
+  margin-left: 4px;
+  border-radius: 16px;
+  font-weight: 700;
+  padding: 4px 16px 4px 16px;
+}
+
+.status-connected {
+  border: var(--tbk-success-3) solid 1px;
+  color: var(--tbk-success-4);
+  background-color: var(--tbk-success-1);
+}
+
+.status-disconnected {
+  border: var(--tbk-danger-1) solid 1px;
+  color: var(--tbk-danger-3);
+  background-color: var(--tbk-danger-2);
+}

@@ -14,4 +14,10 @@ contextBridge.exposeInMainWorld("electronAPI", {
       callback(data);
     });
   },
+
+  onUpdatePosStatus: (callback: (posConnected: boolean) => void) => {
+    ipcRenderer.on("pos_status", (event, posConnected) => {
+      callback(posConnected);
+    });
+  },
 });

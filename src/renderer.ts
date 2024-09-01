@@ -48,6 +48,21 @@ window.electronAPI.onUpdateClientLog((data: string) => {
     logSection.insertBefore(newLogDetail, logSection.firstChild);
 });
 
+window.electronAPI.onUpdatePosStatus((posConnected: boolean) => {
+    const posStatus = document.getElementById('posStatus');
+
+    if(posConnected) {
+        posStatus.classList.remove('status-disconnected');
+        posStatus.classList.add('status-connected');
+        posStatus.textContent = 'Conectado';
+    }
+    else {
+        posStatus.classList.remove('status-connected');
+        posStatus.classList.add('status-disconnected');
+        posStatus.textContent = 'Desconectado';
+    }
+});
+
 setupToggleLogs();
 
 function getFormattedTime() {
