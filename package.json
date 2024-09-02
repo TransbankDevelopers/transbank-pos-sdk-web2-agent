@@ -45,6 +45,6 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
     "socket.io": "^4.7.5",
-    "transbank-pos-sdk": "github:transbankdevelopers/transbank-pos-sdk-nodejs#feat/update-serialport-library"
+    "transbank-pos-sdk": "github:transbankdevelopers/transbank-pos-sdk-nodejs#develop"
   }
 }
