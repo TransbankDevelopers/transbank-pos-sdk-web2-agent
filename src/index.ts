@@ -14,13 +14,14 @@ if (require("electron-squirrel-startup")) {
 }
 
 const posServer = new PosServer();
+const originalConsoleLog = console.log;
 
 console.log = (...args) => {
+  originalConsoleLog(...args);
+  
   const windowsManager = WindowsManager.getMainWindow();
   if (windowsManager !== null) {
     windowsManager.webContents.send('log', [...args])
-  } else {
-    console.log(...args);
   }
 }
 
