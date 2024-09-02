@@ -3,13 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' media-loader:// data:; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline';">
   <title>Agente POS Web</title>
 </head>
 
 <body>
   <div>
     <header class="tbk-header">
-      <img src="assets/images/tbk-logo.svg" alt="Logo Transbank Developers" width="181">
+      <img src="media-loader://assets/images/tbk-logo.svg" alt="Logo Transbank Developers" width="181">
       <button class="tbk-header-button" id="btnToggleLogs">Mostrar últimos eventos</button>
     </header>
     <div class="tbk-header-status">
@@ -17,7 +18,7 @@
       <p>Estado de POS: <span class="connection-status status-disconnected" id="posStatus">Desconectado</span></p>
     </div>
     <section class="tbk-section">
-      <img src="assets/images/POS.webp" alt="POS" class="tbk-section-background">
+      <img src="media-loader://assets/images/POS.webp" alt="POS" class="tbk-section-background">
       <div class="tbk-logs" id="logs">
       </div>
     </section>
