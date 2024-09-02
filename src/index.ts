@@ -13,6 +13,12 @@ if (require("electron-squirrel-startup")) {
   app.quit();
 }
 
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+}
+
 const posServer = new PosServer();
 const originalConsoleLog = console.log;
 
