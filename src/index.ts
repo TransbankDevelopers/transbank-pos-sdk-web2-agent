@@ -84,7 +84,6 @@ app.on("ready", () => {
 
   protocol.handle("media-loader", (request) => {
     const filePath = request.url.slice('media-loader://'.length)
-    console.log(path.join(__dirname, filePath));
     return net.fetch(url.pathToFileURL(path.join(__dirname, filePath)).toString())
   });
 
