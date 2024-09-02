@@ -18,7 +18,7 @@ const originalConsoleLog = console.log;
 
 console.log = (...args) => {
   originalConsoleLog(...args);
-  
+
   const windowsManager = WindowsManager.getMainWindow();
   if (windowsManager !== null) {
     windowsManager.webContents.send('log', [...args])
@@ -38,6 +38,9 @@ const createWindow = (): void => {
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+  mainWindow.removeMenu();
+
   WindowsManager.setMainWindow(mainWindow);
 
   // Open the DevTools.
