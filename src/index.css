@@ -260,3 +260,16 @@ pre {
   color: var(--tbk-danger-3);
   background-color: var(--tbk-danger-2);
 }
+
+.tbk-section {
+  position: relative;
+}
+
+.tbk-section-background {
+  position: absolute;
+  left: 50%;
+  height: 300px;
+  opacity: 0.3;
+  z-index: -1;
+  transform: translate(-50%);
+}
