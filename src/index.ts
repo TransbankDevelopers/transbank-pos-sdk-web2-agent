@@ -37,6 +37,7 @@ const createWindow = (): void => {
     height: 480,
     width: 640,
     icon: getAppIcon(),
+    resizable: false,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
