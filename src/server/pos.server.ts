@@ -7,10 +7,11 @@ import pos from "../pos";
 
 const PORT = 8090;
 const cors = {
-  origin: 'http://pos-web.test',
+  origin: (origin, callback) => {
+    callback(null, origin);
+  },
   methods: ['GET', 'POST'],
-  credentials: true,
-  optionsSuccessStatus: 200
+  credentials: true
 };
 
 const io = new socketIo.Server(PORT, {cors, allowEIO3: true});
