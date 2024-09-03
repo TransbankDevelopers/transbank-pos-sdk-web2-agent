@@ -1,6 +1,6 @@
 # Transbank SDK Web - Agente Web
 
-Este proyecto es parte del SDK Web para POS Integrado. El agente web es una aplicación que permite la comunicación entre el POS Integrado y el SDK Web. La comunicación la realiza mediate la librería [Sockect.IO](https://socket.io/).
+Este proyecto es parte del SDK Web para POS Integrado. El agente web es una aplicación que permite la comunicación entre el POS Integrado y el SDK Web. La comunicación la realiza mediante la librería [Sockect.IO](https://socket.io/).
 
 ## Agente Web
 
@@ -12,7 +12,7 @@ Es un SDK que permite la comunicación con el agente, es el encargado de mandar 
 
 ## Inicio rápido
 
-En la [sección de releases (versiones)](https://github.com/TransbankDevelopers/transbank-pos-sdk-web-agent2/releases/latest) se incluye en cada versión el ejecutable/instalador. Descargar la ultima versión y ejecuta el instalador o ejecutable para iniciar ela gente web en el computador donde se encuentra el POS Integrado conectado físicamente (USB ó conexión serial).
+En la [sección de releases (versiones)](https://github.com/TransbankDevelopers/transbank-pos-sdk-web-agent2/releases/latest) se incluye en cada versión el ejecutable/instalador. Descargar la última versión y ejecuta el instalador o ejecutable para iniciar el agente web en el computador donde se encuentra el POS Integrado conectado físicamente (USB o conexión serial).
 
 ## Documentación
 
@@ -26,7 +26,7 @@ La documentación relevante para usar este SDK es:
 
 ## Desarrollo
 
-En caso que necesites compilar en un entorno diferente a los disponibles (Mac OS y Windows) o quieras modificar este proyecto puedes hacer de la siguiente manera.
+En caso de que necesites compilar en un entorno diferente a los disponibles (Mac OS y Windows) o quieras modificar este proyecto, puedes hacer de la siguiente manera.
 
 ### Requisitos
 - Node 20
@@ -54,7 +54,7 @@ npm run package
 
 ### Compilar dependencias nativas
 
-En caso de que necesites compilar las dependencias nativas debes ejecutar lo siguiente:
+En caso de que necesites compilar las dependencias nativas, debes ejecutar lo siguiente:
 
 ```bash copy
 ./node_modules/.bin/electron-rebuild
@@ -68,7 +68,7 @@ En caso de que necesites compilar las dependencias nativas debes ejecutar lo sig
 - Usamos inglés para los nombres de ramas y mensajes de commit 💬
 - Todas las fusiones a la rama principal se realizan a través de solicitudes de Pull Request(PR) ⬇️
 - Puedes emplear tokens como "WIP" en el encabezado de un commit, separados por dos puntos (:), por ejemplo: "WIP: este es un mensaje de commit útil ✅"
-- Las ramas de nuevas funcionalidades que no han sido fusionada, se asume que no está finalizada⚠️
+- Las ramas de nuevas funcionalidades que no han sido fusionadas, se asume que no están finalizadas ⚠️
 - Los nombres de las ramas deben estar en minúsculas y las palabras deben separarse con guiones (-) 🔤
 - Los nombres de las ramas deben comenzar con uno de los tokens abreviados definidos. Por ejemplo: feat/tokens-configurations 🌿
 
@@ -82,7 +82,7 @@ En caso de que necesites compilar las dependencias nativas debes ejecutar lo sig
 
 `docs` = Cambios solo de documentación.
 
-`style` = Cambios que no afectan el significado del código. (espaciado, formateo de código, comillas faltantes, etc)
+`style` = Cambios que no afectan el significado del código. (espaciado, formateo de código, comillas faltantes, etc.)
 
 `refactor` = Un cambio en el código que no arregla un bug ni agrega una funcionalidad.
 
@@ -102,7 +102,7 @@ En caso de que necesites compilar las dependencias nativas debes ejecutar lo sig
 2. Haz un push de los commits y publica la nueva rama.
 3. Abre un Pull Request apuntando tus cambios a develop.
 4. Espera a la revisión de los demás integrantes del equipo.
-5. Mezcla los cambios sólo cuando esté aprobado por mínimo 2 revisores.
+5. Mezcla los cambios solo cuando esté aprobado por mínimo 2 revisores.
 
 ### Esquema de flujo
 ![gitflow](https://wac-cdn.atlassian.com/dam/jcr:cc0b526e-adb7-4d45-874e-9bcea9898b4a/04%20Hotfix%20branches.svg?cdnVersion=1324)
@@ -117,16 +117,16 @@ En caso de que necesites compilar las dependencias nativas debes ejecutar lo sig
 ### **Pull Request**
 
 - Usar un lenguaje imperativo y en tiempo presente: "change" no "changed" ni "changes".
-- El titulo del los PR y mensajes de commit no pueden comenzar con una letra mayúscula.
+- El título del los PR y mensajes de commit no pueden comenzar con una letra mayúscula.
 - No se debe usar punto final en los títulos o descripción de los commits.
-- El titulo del PR debe comenzar con el short lead token definido para la rama, seguido de : y una breve descripción del cambio.
+- El título del PR debe comenzar con el short lead token definido para la rama, seguido de `:` y una breve descripción del cambio.
 - La descripción del PR debe detallar los cambios.
 - La descripción del PR debe incluir evidencias de que los test se ejecutan de forma correcta.
 - Se pueden usar gif o videos para complementar la descripción o evidenciar el funcionamiento del PR.
 
 ## Generar una nueva versión
 
-Para generar una nueva versión, se debe crear un PR (con un título "release: prepare release X.Y.Z" con los valores que correspondan para `X`, `Y` y `Z`). Se debe seguir el estándar [SemVer](https://semver.org/lang/es/) para determinar si se incrementa el valor de `X` (si hay cambios no retrocompatibles), `Y` (para mejoras retrocompatibles) o `Z` (si sólo hubo correcciones a bugs).
+Para generar una nueva versión, se debe crear un PR (con un título "release: prepare release X.Y.Z" con los valores que correspondan para `X`, `Y` y `Z`). Se debe seguir el estándar [SemVer](https://semver.org/lang/es/) para determinar si se incrementa el valor de `X` (si hay cambios no retrocompatibles), `Y` (para mejoras retrocompatibles) o `Z` (si solo hubo correcciones a bugs).
 
 En ese PR deben incluirse los siguientes cambios:
 
