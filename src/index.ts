@@ -39,6 +39,7 @@ const createWindow = (): void => {
     width: 640,
     icon: getAppIcon(),
     resizable: false,
+    show: false,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
@@ -61,6 +62,10 @@ const createWindow = (): void => {
   mainWindow.on('restore', () => {
     mainWindow.show();
     tray.destroy();
+  });
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    mainWindow.show();
   });
 
   // Open the DevTools.
