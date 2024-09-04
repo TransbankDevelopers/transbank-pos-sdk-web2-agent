@@ -24,4 +24,5 @@ const logger = winston.createLogger({
   transports: [new winston.transports.Console(), dailyRotateFileTransport],
 });
 
+export { logDirectory };
 export default logger;
