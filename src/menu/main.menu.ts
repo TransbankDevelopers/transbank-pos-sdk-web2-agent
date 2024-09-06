@@ -1,7 +1,12 @@
 import { Menu, shell, app, MenuItemConstructorOptions } from "electron";
 import { logDirectory } from "../logger/logger";
+import {
+  isAutoLaunchEnabled,
+  toggleAutoLaunch,
+} from "../auto-launch/auto.launch";
 
 const isMacOs = process.platform === "darwin";
+const isProd = process.env.NODE_ENV === "production";
 
 const macOsMenu: MenuItemConstructorOptions = {
   label: app.name,
@@ -41,30 +46,49 @@ const exitOption: MenuItemConstructorOptions = {
   role: "quit",
 };
 
-const template: Electron.MenuItemConstructorOptions[] = createMenuOptions();
-
-function createMenuOptions(): Array<MenuItemConstructorOptions> {
-  const menuOptions = [];
+async function createMenu(): Promise<MenuItemConstructorOptions[]> {
+  const menu = [];
   const fileSubMenu = [openLogOption];
 
   if (isMacOs) {
-    menuOptions.push(macOsMenu);
+    menu.push(macOsMenu);
   }
 
-  if(!isMacOs) {
+  if (!isMacOs) {
     fileSubMenu.push(exitOption);
   }
 
   fileMenu.submenu = fileSubMenu;
-  menuOptions.push(fileMenu);
-  return menuOptions;
+  menu.push(fileMenu);
+
+  if (isProd) {
+    const autoLaunchOption = await getAutoLaunchOption();
+    menu.push({
+      label: "Opciones",
+      type: "submenu",
+      submenu: [autoLaunchOption],
+    });
+  }
+
+  return menu;
+}
+
+async function getAutoLaunchOption(): Promise<MenuItemConstructorOptions> {
+  const autoLaunchEnabled = await isAutoLaunchEnabled();
+  return {
+    label: "Arranque en el inicio",
+    type: "checkbox",
+    checked: autoLaunchEnabled,
+    click: toggleAutoLaunch,
+  };
+}
+
+export async function setAppMenu(): Promise<void> {
+  const template = await createMenu();
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
 }
 
 function openLogFolder(): void {
   shell.openPath(logDirectory);
-}
-
-export function setAppMenu(): void {
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
 }
