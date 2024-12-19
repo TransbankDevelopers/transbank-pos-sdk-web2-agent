@@ -46,7 +46,7 @@ const exitOption: MenuItemConstructorOptions = {
   role: "quit"
 };
 
-async function createMenu(): Promise<MenuItemConstructorOptions[]> {
+const createMenu = async function(): Promise<MenuItemConstructorOptions[]> {
   const menu = [];
   const fileSubMenu = [openLogOption];
 
@@ -73,7 +73,7 @@ async function createMenu(): Promise<MenuItemConstructorOptions[]> {
   return menu;
 }
 
-async function getAutoLaunchOption(): Promise<MenuItemConstructorOptions> {
+const getAutoLaunchOption = async function(): Promise<MenuItemConstructorOptions> {
   const autoLaunchEnabled = await isAutoLaunchEnabled();
   return {
     label: "Arranque en el inicio",
