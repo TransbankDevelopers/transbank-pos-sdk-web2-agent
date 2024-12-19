@@ -93,7 +93,9 @@ app.on("ready", async () => {
 
   protocol.handle("media-loader", (request) => {
     const filePath = request.url.slice('media-loader://'.length)
-    return net.fetch(url.pathToFileURL(path.join(__dirname, filePath)).toString())
+    const fullPath = path.join(__dirname, filePath)
+    const urlPath = url.pathToFileURL(fullPath).toString()
+    return net.fetch(urlPath)
   });
 
   setupAutoLaunch();
