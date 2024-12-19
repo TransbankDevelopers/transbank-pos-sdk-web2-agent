@@ -1,0 +1,57 @@
+name: Release to NPM
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Make
+        run: npm run make
+      - name: Upload Installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: "out/make/squirrel.windows/x64/Transbank POS Agente Web-${{ github.ref_name }} Setup.exe"
+          asset_name: "Transbank POS Agente Web-${{ github.ref_name }} Setup.exe"
+          asset_content_type: application/octet-stream
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Make
+        run: npm run make
+      - name: Upload Installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: "out/make/Transbank POS Agente -${{ github.ref_name }}-arm64.dmg"
+          asset_name: "Transbank POS Agente -${{ github.ref_name }}-arm64.dmg"
+          asset_content_type: application/x-apple-diskimage
