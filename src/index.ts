@@ -58,8 +58,7 @@ const createWindow = (): void => {
   WindowsManager.setMainWindow(mainWindow);
 
   let tray = null;
-  mainWindow.on('minimize', (event) => {
-    event.preventDefault();
+  mainWindow.on('minimize', () => {
     mainWindow.hide();
     tray = createTray(mainWindow);
   });
