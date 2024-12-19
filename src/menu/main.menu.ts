@@ -17,33 +17,33 @@ const macOsMenu: MenuItemConstructorOptions = {
     {
       role: "hideOthers",
       label: "Ocultar Otros",
-      accelerator: "CmdOrCtrl+Alt+H",
+      accelerator: "CmdOrCtrl+Alt+H"
     },
     { role: "unhide", label: "Mostrar Todos" },
     { type: "separator" },
     {
       role: "quit",
       label: `Salir de ${app.name}`,
-      accelerator: "CmdOrCtrl+Q",
-    },
-  ],
+      accelerator: "CmdOrCtrl+Q"
+    }
+  ]
 };
 
 const fileMenu: MenuItemConstructorOptions = {
   label: "Archivo",
-  type: "submenu",
+  type: "submenu"
 };
 
 const openLogOption: MenuItemConstructorOptions = {
   label: "Abrir Carpeta de Logs",
   accelerator: "CmdOrCtrl+L",
-  click: openLogFolder,
+  click: openLogFolder
 };
 
 const exitOption: MenuItemConstructorOptions = {
   label: "Salir",
   accelerator: "CmdOrCtrl+Q",
-  role: "quit",
+  role: "quit"
 };
 
 async function createMenu(): Promise<MenuItemConstructorOptions[]> {
@@ -66,7 +66,7 @@ async function createMenu(): Promise<MenuItemConstructorOptions[]> {
     menu.push({
       label: "Opciones",
       type: "submenu",
-      submenu: [autoLaunchOption],
+      submenu: [autoLaunchOption]
     });
   }
 
@@ -79,7 +79,7 @@ async function getAutoLaunchOption(): Promise<MenuItemConstructorOptions> {
     label: "Arranque en el inicio",
     type: "checkbox",
     checked: autoLaunchEnabled,
-    click: toggleAutoLaunch,
+    click: toggleAutoLaunch
   };
 }
 
