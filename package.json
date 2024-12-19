@@ -39,9 +39,15 @@
   },
   "keywords": [],
   "author": {
-    "name": "Mauricio Astudillo Toledo",
-    "email": "mauricio.astudillo@continuumhq.com"
+    "name": "Transbank Developers",
+    "email": "transbankdevelopers@continuum.cl"
   },
+  "contributors": [
+    {
+      "name": "Mauricio Astudillo Toledo",
+      "email": "mauricio.astudillo@continuumhq.com"
+    }
+  ],
   "license": "BSD-3-Clause",
   "dependencies": {
     "auto-launch": "^5.0.6",
