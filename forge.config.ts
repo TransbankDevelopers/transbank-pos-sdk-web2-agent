@@ -6,7 +6,7 @@ import { AutoUnpackNativesPlugin } from '@electron-forge/plugin-auto-unpack-nati
 import { WebpackPlugin } from '@electron-forge/plugin-webpack';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
-import { MakerDMG } from '@electron-forge/maker-dmg'
+import { MakerDMG, MakerDMGConfig } from '@electron-forge/maker-dmg'
 
 import { mainConfig } from './webpack.main.config';
 import { rendererConfig } from './webpack.renderer.config';
@@ -25,7 +25,7 @@ const config: ForgeConfig = {
       icon: "./src/assets/icons/icon.icns",
       format: 'ULFO',
       overwrite: true,
-    })
+    } as MakerDMGConfig)
   ],
   plugins: [
     new AutoUnpackNativesPlugin({}),
