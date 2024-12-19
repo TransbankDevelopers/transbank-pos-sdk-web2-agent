@@ -52,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: "out/make/Transbank POS Agente -${{ github.ref_name }}-arm64.dmg"
-          asset_name: "Transbank POS Agente -${{ github.ref_name }}-arm64.dmg"
+          asset_path: "out/make/Transbank POS Agente Web-${{ github.ref_name }}-arm64.dmg"
+          asset_name: "Transbank POS Agente Web-${{ github.ref_name }}-arm64.dmg"
           asset_content_type: application/x-apple-diskimage
